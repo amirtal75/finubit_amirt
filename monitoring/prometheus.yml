@@ -1,0 +1,15 @@
+global:
+  scrape_interval: 1s
+
+scrape_configs:
+  - job_name: 'front'
+    static_configs:
+      - targets: ['front:5002']  # Container name + port
+
+  - job_name: 'core'
+    static_configs:
+      - targets: ['core:5001']
+
+  - job_name: 'tester'
+    static_configs:
+      - targets: [ 'tester:5003' ]
